@@ -1,0 +1,216 @@
+@font-face {
+    font-family: openSans; /* Имя шрифта */
+    src: url('../fonts/Open-Sans-bold.ttf'); /* Путь к файлу со шрифтом */
+}
+body {
+    /*font-family: openSans;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.in-block{
+    display: inline-block;
+}
+#popup{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 250ms linear;
+	-moz-transition: opacity 250ms linear;
+	transition: opacity 250ms linear;
+    z-index: 100;
+}
+#popup.active{
+    opacity: 1;
+    display: block;
+    -webkit-transition: opacity 250ms linear;
+	-moz-transition: opacity 250ms linear;
+	transition: opacity 250ms linear;
+
+}
+
+.popup{
+    background: rgba(255,255,255, 0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+#searchInput{
+    height: 90px;
+    width: 70%;
+    font-weight: 100;
+    font-size: 72px;
+    text-transform: uppercase;
+    border: 0;
+    border-bottom: 1px solid #D5D5D5;
+    display: inline-block;
+    margin-left: 40px;
+
+}
+
+#searchResult{
+    margin-left: 54px;
+}
+
+#popup .content{
+    padding: 60px 30px 60px 30px
+}
+
+#popup input[type="text"]{
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: transparent;
+}
+
+#popup input:focus{
+    outline:none;
+}
+
+
+#popup .closePopupBut{
+    background-image: url('../img/icons.png');
+    background-position: 0px -5px;
+    width: 65px;
+    height: 60px;
+
+}
+
+
+
+#popup .team-item{
+    position: relative;
+    height: 140px;
+    width: 520px;
+
+}
+
+#popup .team-img{
+    width: 160px;
+    height: 160px;
+    background: #5a5a5a;
+
+}
+
+#popup .team-name{
+    position: relative;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 800;
+    top: -4px;
+}
+
+#popup .team-descr{
+    position: relative;
+    padding-top: 16px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+}
+
+#popup .r-col .month{
+    padding: 16px 0 16px 0;
+    margin: 0;
+}
+
+#popup .r-col .month p{
+    color: #ffffff;
+    background-color: #000000;
+    text-transform: uppercase;
+    font-size: 8px;
+    display: inline;
+    letter-spacing: 2px;
+    padding: 2px 6px 2px 6px;
+
+}
+
+
+/*test-classes*/
+
+#popup .l-col{
+    float: left;
+}
+
+#popup .r-col{
+    float: left;
+    padding-left: 29px;
+    width: 254px;
+}
+
+#popup .col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+}
+
+#popup .col-max {
+    /* custom width */
+    width: 500px;
+    height: 140px;
+    margin: 58px 28px 0 0;
+    padding: 0;
+}
+
+
+@media (max-width : 600px) {
+    .scroll{display:none;}
+}
+
+@media (max-width : 530px) {
+    #searchInput{
+        font-size: 24px;
+        height: 60px;
+    }
+
+    #popup .month{
+        padding: 0;
+    }
+
+    #popup .col-max {
+        /* custom width */
+        width: 280px;
+        height: 100px;
+        margin: 20px 0 0 0;
+        padding: 0;
+    }
+    #popup .r-col{
+        padding-left: 20px;
+        width: 210px;
+    }
+
+    #popup .team-img{
+        width: 70px;
+        height: 70px;
+        background-size: 100%;
+
+    }
+
+    #popup .team-name{
+        position: relative;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 800;
+    }
+
+    #popup .team-descr{
+        position: relative;
+        padding-top: 10px;
+    }
+
+    #popup .row-centered{
+        padding-left: 0;
+    }
+}

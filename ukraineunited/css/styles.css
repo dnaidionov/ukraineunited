@@ -1,0 +1,132 @@
+/* Fonts */
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-vfafeq');
+	src:url('../fonts/icomoon.eot?#iefix-vfafeq') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-vfafeq') format('woff'),
+		url('../fonts/icomoon.ttf?-vfafeq') format('truetype'),
+		url('../fonts/icomoon.svg?-vfafeq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="iconFont-"], [class*=" iconFont-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.iconFont-newspaper:before { content: "\e600";}
+.iconFont-reddit:before { content: "\e601";}
+.iconFont-twitter:before { content: "\e602";}
+.iconFont-facebook:before { content: "\e603";}
+.iconFont-googleplus2:before { content: "\e606";}
+.iconFont-googleplus:before { content: "\e604";}
+.iconFont-vk:before { content: "\e605";}
+
+.bottom-social{
+	padding: 0 75px 0 120px;
+	text-align: right; 
+	margin-top: 22px;
+}
+.bottom-social a{
+	text-decoration: none;
+	font-size: 22px;
+	margin-right: 5px;
+	color: #bfbfc0;
+}
+.bottom-social a.iconFont-reddit,
+.bottom-social a.iconFont-facebook,
+.bottom-social a.iconFont-twitter{
+	font-size: 24px;
+}
+
+.bottom-social a.iconFont-facebook:hover{ color: #3b5998; }
+.bottom-social a.iconFont-reddit:hover{ color: #000; }
+.bottom-social a.iconFont-twitter:hover{ color: #1bb2e9; }
+.bottom-social a.iconFont-googleplus2:hover{ color: #da2713; }
+.bottom-social a.iconFont-vk:hover{ color: #45688f; }
+
+
+
+
+.header-item .iconFont-newspaper{ font-size: 24px; position: relative; top: 6px; font-weight: normal; display: none;}
+
+@media only screen and (max-width: 480px){
+	.about p,
+	.scale-control p{
+		display: none;	
+	}	
+	.header-item .iconFont-newspaper{ display: inline-block;}
+}
+/*--------------------------------------------------------------*/
+
+
+@media only screen and (min-height: 1015px) and (max-height: 1400px){
+	.carousel-wrapper .carousel-timeline .timeline-day.active,
+	.carousel-wrapper .carousel-timeline .timeline-day.active:hover {
+		height: 180px;
+	}
+
+}
+@media screen and ( max-height: 800px ){	
+	.carousel-wrapper .carousel-timeline .timeline-day.active, .carousel-wrapper .carousel-timeline .timeline-day.active:hover{
+		height:60px;
+	}
+}
+
+@media screen and ( max-height: 681px ){
+	body{
+		overflow-y: scroll;		
+	}
+    .carousel-wrapper{
+		margin-top:0px;
+		top: 80px;
+		height: 600px;
+		position: relative;
+	}
+	.carousel-wrapper .carousel-timeline{
+		top:50%;
+		margin-top: -120px;
+	}
+	
+	.carousel-wrapper .carousel-timeline .timeline-day.active, .carousel-wrapper .carousel-timeline .timeline-day.active:hover{
+		height:50px;
+	}
+	.carousel-wrapper .carousel-authors-wrapper {
+    	height: 230px;
+    }
+    body.scaled .carousel-wrapper .carousel-authors-wrapper{
+		bottom: 10%;
+	}
+	
+	body.scaled .carousel-wrapper .fake-author-name{ bottom: 10%; margin-bottom: 160px;}
+    
+}
+
+.scale-control,
+.about,
+.dropdown,
+.search-control{
+    position: relative;
+    z-index: 10000;
+}
+.logo:hover{
+	cursor: pointer;
+}
+
+
+body.scaled .carousel-wrapper .fake-author-name{ bottom: 20%;  margin-bottom: 160px}
+
+body.scaled .carousel-wrapper .carousel-authors-wrapper{
+	bottom: 20%;
+	height: 160px;
+}

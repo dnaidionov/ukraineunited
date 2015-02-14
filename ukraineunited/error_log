@@ -1,0 +1,1 @@
+[05-Feb-2015 17:05:56 UTC] PHP Fatal error:  Call to undefined function getLang() in /home/dimagavrysh/public_html/dev/index.php on line 4
