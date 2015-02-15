@@ -8,14 +8,14 @@ function getContentData(){
 	$contentData = array();
 
 	if ($handle = opendir($interview_path)) {
-	
+
 		$contentData['interview'] = array();
 		$i = 0;
 		while (false !== ($entry = readdir($handle))) {
 			if (strpos($entry, '.json') !== false) {
 				$json = file_get_contents($interview_path.$entry);
 				$obj = json_decode($json);
-				
+
 				$contentData['interview'][] = array(
 					"id" => $i++,
 					"eventDate" => $obj->eventDate,
@@ -28,22 +28,23 @@ function getContentData(){
 					"photos" => $obj->photos,
 					"text" => $obj->text
 				);
-				
+
 			}
 		}
 		closedir($handle);
 	}
 	usort($contentData['interview'], "sortByEventDate");
-	
-	if ($handle = opendir($news_path)) 
+
+
+	if ($handle = opendir($news_path))
 	{
 		$contentData['news'] = array();
-		
+
 		while (false !== ($entry = readdir($handle))) {
 			if (strpos($entry, '.json') !== false) {
 				$json = file_get_contents($news_path.$entry);
 				$obj = json_decode($json);
-				
+
 				$contentData['news'][] = array(
 					"text" => $obj->text,
 					"eventDate" => $obj->eventDate,
@@ -68,23 +69,23 @@ function getLang(){
 
 function getScript(){
 	$contentData = getContentData();
-	
-	echo '<script> 
+
+	echo '<script>
 			contentData = '.json_encode($contentData).';
-			
+
 		  </script>';
 }
 
 function setLangJS(){
 	$lang = getLang();
-	
-	echo '<script> 
+
+	echo '<script>
 			lang  = "'.$lang.'";
 		  </script>';
 }
 
 function sortByEventDate($a, $b)
-{	
+{
 	if (strtotime($a['eventDate']) == strtotime($b['eventDate'])) {
         return 0;
     }

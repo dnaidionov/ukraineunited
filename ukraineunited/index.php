@@ -20,7 +20,8 @@ include('i18n/'.$lang.'.php');
     <link href="css/article.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<?php
@@ -37,7 +38,7 @@ include('i18n/'.$lang.'.php');
         <div class="header-item">
             <div class="dropdown">
                 <p id="dropdownMenu1" data-toggle="dropdown">
-                    <?php 
+                    <?php
 						if($lang == 'en') echo ENG;
 						if($lang == 'ru') echo RUS;
 						if($lang == 'ua') echo UKR;
