@@ -32,7 +32,7 @@ body.scaled #header{
     -webkit-transition: 250ms ease;
 	-moz-transition: 250ms ease;
 	transition: 250ms ease;
-	
+
 	top: 0;
 }
 
@@ -47,7 +47,7 @@ body.scaled #header{
     font-weight: 700;
     text-transform: uppercase;
 	cursor: pointer;
-    
+
 }
 body.scaled .header-item{
     -webkit-transform: translate3d(0, -50px, 0);
@@ -320,6 +320,10 @@ body.scaled .header-item{
     font-weight: 600;
 }
 
+.text p{
+  margin-bottom: 25px;
+}
+
 .text .quote{
     font-style: italic;
     font-size: 18px;
@@ -345,7 +349,7 @@ body.scaled .header-item{
 
 
 @media (min-width : 1200px) {
-    
+
     .photo{
         width: 668px;
         height: 668px;

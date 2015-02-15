@@ -1,8 +1,8 @@
 $(function(){
 	"use strict";
-	
+
 	var months;
-	
+
 	if (lang =='en') {
 		months = {
 			first: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -22,10 +22,10 @@ $(function(){
 		};
 	}
 
-	
-	
-	
-	
+
+
+
+
     function setActiveMounth(element, index){
         var that = this;
         try{
@@ -144,11 +144,11 @@ $(function(){
 			},
 			getDate = function(date){
 				var postDate = date.split('.');
-				
+
 				if (lang == 'en') {
 					return months.first[parseInt(postDate[1]) - 1] + ', ' + parseInt(postDate[0]);
 				}
-				return parseInt(postDate[0]) + ' ' + months.first[parseInt(postDate[1]) - 1];
+				return parseInt(postDate[0]) + ' ' + months.first[parseInt(postDate[1]) - 1] + ', ' + postDate[2];
 			};
 		data.forEach(function(el, index){
 			wrapper.appendChild(createPost(el, index));
@@ -410,14 +410,14 @@ $(function(){
         }
 
 		this.init = function(){
-		
-		
+
+
 			var that = this;
             this.scrollDelta = 0;
 
 			this.currentMonthData = {};
 			Object.keys(this.data).forEach(function(type, typeIndex){
-			
+
 				that.currentMonthData[type] = [];
 				that.allData[type] = [];
 				that.data[type].forEach(function(el, index){
@@ -425,12 +425,12 @@ $(function(){
 						that.currentMonthData[type].push(el);
 					}
 					that.allData[type].push(el);
-				
+
 				});
-				
-				
+
+
 			});
-			
+
 			Object.keys(this.carouselStructure).forEach(function(el, index){
 				that.carouselStructure[el].element = document.createElement('div');
 				that.carouselStructure[el].element.className = that.carouselStructure[el].clName;
@@ -983,7 +983,7 @@ $(function(){
 				}
 			});
 
-				
+
 			return offInd;
 		};
 
@@ -1016,25 +1016,25 @@ $(function(){
 
 
 		};
-		
+
 		if (this.currentMonthData.news.length > 0) {
 			this.activeGlobalNewsIndex = getNewsOffset(index-1) + 1;
 			setActive(this.carouselStructure.newsWrapper.scroller.children[getNewsOffset(index - 1)]);
 			setActive(this.carouselStructure.timelineWrapper.element.children[0].children[0].children[getDay(this.currentMonthData.news[index - 1].eventDate) - 1]);
 		}
-		
+
 		if (this.currentMonthData.interview.length > 0) {
 			setActive(this.carouselStructure.timelineWrapper.element.children[2].children[0].children[getDay(this.currentMonthData.interview[nearestInterview(index)].eventDate) - 1]);
 			//setActiveName(this.data.interview[index]);
 			setActiveName(this.data.interview[(getInterviewOffset(nearestInterview(index)) + 1) - 1]);
 			setActive(this.carouselStructure.authorsWrapper.scroller.children[(getInterviewOffset(nearestInterview(index)))]);
 		}
-		
+
 		scrollers.forEach(function(scroller, i){
 			var width = 10;
 			if (scroller.children.length > 0) {
 				var width = scroller.children[0].offsetWidth;
-			} 
+			}
 			switch(i){
 				case 0:
 					if (that.currentMonthData.news.length > 0) {
@@ -1064,7 +1064,7 @@ $(function(){
 			' transform: translate3d(' + center + 'px,0,0);';
 			scroller.style.cssText = translateTo;
 		});
-		
+
 	};
 
 	window.Carousel = Carousel;
